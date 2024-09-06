@@ -18,7 +18,7 @@ is-fullwidth">
                     <td>{{ pais.Idioma }}</td>
                     <td>
                         <button class="btn btn-secondary btn-sm">Editar</button>
-                        <button v-on:click="$event.target.parentElement.parentElement.remove()"
+                        <button v-on:click="eliminarFilaConBoton($event.target)"
                             class="btn btn-danger btn-sm">Eliminar</button>
                     </td>
                 </tr>
@@ -42,7 +42,9 @@ export default {
         };
     },
     methods: {
-        //
+        eliminarFilaConBoton(boton) {
+            boton.parentElement.parentElement.remove()
+        }
     },
 };
 </script>
