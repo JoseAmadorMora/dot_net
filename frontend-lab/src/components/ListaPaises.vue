@@ -18,7 +18,8 @@ is-fullwidth">
                     <td>{{ pais.Idioma }}</td>
                     <td>
                         <button class="btn btn-secondary btn-sm">Editar</button>
-                        <button class="btn btn-danger btn-sm">Eliminar</button>
+                        <button v-on:click="$event.target.parentElement.parentElement.remove()"
+                            class="btn btn-danger btn-sm">Eliminar</button>
                     </td>
                 </tr>
             </tbody>
@@ -32,21 +33,18 @@ export default {
     data() {
         return {
             paises: [
-                {
-                    nombre: "Costa Rica", continente: "América", Idioma:
-                        "Español"
-                },
+                { nombre: "Costa Rica", continente: "América", Idioma: "Español" },
                 { nombre: "Japón", continente: "Asia", Idioma: "Japonés" },
-                {
-                    nombre: "Corea del Sur", continente: "Asia", Idioma:
-                        "Coreano"
-                },
+                { nombre: "Corea del Sur", continente: "Asia", Idioma: "Coreano" },
                 { nombre: "Italia", continente: "Europa", Idioma: "Italiano" },
                 { nombre: "Alemania", continente: "Europa", Idioma: "Alemán" },
             ],
         };
     },
+    methods: {
+        //
+    },
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>
