@@ -28,6 +28,7 @@ is-fullwidth">
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     name: "ListaPaises",
     data() {
@@ -44,8 +45,17 @@ export default {
     methods: {
         eliminarFilaConBoton(boton) {
             boton.parentElement.parentElement.remove()
+        },
+        obtenerTareas() {
+            axios.get("https://localhost:7019/api/Paises").then(
+                (response) => {
+                    this.paises = response.data;
+                });
         }
     },
+    created: function () {
+        this.obtenerTareas();
+    }
 };
 </script>
 
