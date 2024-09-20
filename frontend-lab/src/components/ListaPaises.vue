@@ -15,7 +15,7 @@ is-fullwidth">
                 <tr v-for="(pais, index) of paises" :key="index">
                     <td>{{ pais.nombre }}</td>
                     <td>{{ pais.continente }}</td>
-                    <td>{{ pais.Idioma }}</td>
+                    <td>{{ pais.idioma }}</td>
                     <td>
                         <button class="btn btn-secondary btn-sm">Editar</button>
                         <button v-on:click="eliminarFilaConBoton($event.target)"
@@ -34,11 +34,11 @@ export default {
     data() {
         return {
             paises: [
-                { nombre: "Costa Rica", continente: "América", Idioma: "Español" },
-                { nombre: "Japón", continente: "Asia", Idioma: "Japonés" },
-                { nombre: "Corea del Sur", continente: "Asia", Idioma: "Coreano" },
-                { nombre: "Italia", continente: "Europa", Idioma: "Italiano" },
-                { nombre: "Alemania", continente: "Europa", Idioma: "Alemán" },
+                // { nombre: "Costa Rica", continente: "América", Idioma: "Español" },
+                // { nombre: "Japón", continente: "Asia", Idioma: "Japonés" },
+                // { nombre: "Corea del Sur", continente: "Asia", Idioma: "Coreano" },
+                // { nombre: "Italia", continente: "Europa", Idioma: "Italiano" },
+                // { nombre: "Alemania", continente: "Europa", Idioma: "Alemán" },
             ],
         };
     },
@@ -47,7 +47,7 @@ export default {
             boton.parentElement.parentElement.remove()
         },
         obtenerTareas() {
-            axios.get("https://localhost:7019/api/Paises").then(
+            axios.get("https://localhost:7024/api/Paises").then(
                 (response) => {
                     this.paises = response.data;
                 });
