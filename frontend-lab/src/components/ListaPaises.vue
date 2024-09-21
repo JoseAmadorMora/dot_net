@@ -25,6 +25,15 @@ is-fullwidth">
             </tbody>
         </table>
     </div>
+    <div class="row justify-content-end">
+        <div class="col-2">
+            <a href="/pais">
+                <button type="button" class="btn btn-outline-secondary float-right">
+                    Agregar país
+                </button>
+            </a>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -34,11 +43,11 @@ export default {
     data() {
         return {
             paises: [
-                { nombre: "Costa Rica", continente: "América", Idioma: "Español" },
-                { nombre: "Japón", continente: "Asia", Idioma: "Japonés" },
-                { nombre: "Corea del Sur", continente: "Asia", Idioma: "Coreano" },
-                { nombre: "Italia", continente: "Europa", Idioma: "Italiano" },
-                { nombre: "Alemania", continente: "Europa", Idioma: "Alemán" },
+                // { nombre: "Costa Rica", continente: "América", Idioma: "Español" },
+                // { nombre: "Japón", continente: "Asia", Idioma: "Japonés" },
+                // { nombre: "Corea del Sur", continente: "Asia", Idioma: "Coreano" },
+                // { nombre: "Italia", continente: "Europa", Idioma: "Italiano" },
+                // { nombre: "Alemania", continente: "Europa", Idioma: "Alemán" },
             ],
         };
     },
@@ -47,7 +56,7 @@ export default {
             boton.parentElement.parentElement.remove()
         },
         obtenerTareas() {
-            axios.get("https://localhost:7019/api/Paises").then(
+            axios.get("https://localhost:7024/api/Paises").then(
                 (response) => {
                     this.paises = response.data;
                 });
