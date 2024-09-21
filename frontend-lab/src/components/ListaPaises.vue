@@ -15,7 +15,7 @@ is-fullwidth">
                 <tr v-for="(pais, index) of paises" :key="index">
                     <td>{{ pais.nombre }}</td>
                     <td>{{ pais.continente }}</td>
-                    <td>{{ pais.Idioma }}</td>
+                    <td>{{ pais.idioma }}</td>
                     <td>
                         <button class="btn btn-secondary btn-sm">Editar</button>
                         <button v-on:click="eliminarFilaConBoton($event.target)"
