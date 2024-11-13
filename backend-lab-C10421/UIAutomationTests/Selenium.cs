@@ -25,18 +25,20 @@ namespace UIAutomationTests
             _driver.Manage().Window.Maximize();
             //Navega a la pagina que se necesita probar
             _driver.Navigate().GoToUrl(URL);
+            int cantidadPaises = _driver.FindElements(By.Id("lista-paises")).Count;
             var botonAgregarPais = _driver.FindElement(By.Id("boton-ir-a-agregar-pais"));
             _actions.MoveToElement(botonAgregarPais).Click().Perform();
+
             var inputNombrePais = _driver.FindElement(By.Id("name"));
-            inputNombrePais.SendKeys("Mexico");
             var selectContinente = _driver.FindElement(By.Id("continente"));
-            selectContinente.SendKeys("América");
             var inputIdioma = _driver.FindElement(By.Id("idioma"));
+
+            inputNombrePais.SendKeys("Mexico");
+            selectContinente.SendKeys("América");
             inputIdioma.SendKeys("Español");
             _driver.FindElement(By.Id("btn-guardar-pais")).Click();
-            //Assert
-            //No es un buen ejemplo de assert, use uno diferente
-            Assert.IsNotNull(_driver);
+
+            Assert.Greater(_driver.FindElements(By.Id("lista-paises")).Count, cantidadPaises);
         }
     }
 }
