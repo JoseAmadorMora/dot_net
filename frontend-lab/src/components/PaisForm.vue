@@ -24,7 +24,7 @@
                     <input v-model="datosFormulario.idioma" type="text" id="idioma" class="form-control" required />
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-success btn-block">
+                    <button type="submit" class="btn btn-success btn-block" id="btn-guardar-pais">
                         Guardar
                     </button>
                 </div>
