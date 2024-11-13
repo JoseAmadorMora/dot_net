@@ -43,6 +43,8 @@ public class Selenium
             var botonGuardarPais = _wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("btn-guardar-pais")));
             botonGuardarPais.Click();
 
+            _wait.Until(driver => driver.FindElements(By.CssSelector("#lista-paises tbody tr")).Count > 0);
+
             Assert.Greater(_driver.FindElements(By.CssSelector("#lista-paises tbody tr")).Count, cantidadPaisesTabla);
         }
     }
