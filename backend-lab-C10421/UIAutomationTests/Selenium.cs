@@ -28,6 +28,9 @@ public class Selenium
             _driver.Manage().Window.Maximize();
             //Navega a la pagina que se necesita probar
             _driver.Navigate().GoToUrl(URL);
+
+            _wait.Until(driver => ((IJavaScriptExecutor)driver).ExecuteScript("return document.readyState").Equals("complete"));
+
             int cantidadPaisesTabla = _driver.FindElements(By.CssSelector("#lista-paises tbody tr")).Count;
 
             var botonAgregarPais = _wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("boton-ir-a-agregar-pais")));
